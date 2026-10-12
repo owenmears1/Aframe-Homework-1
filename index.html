@@ -22,6 +22,11 @@
            id="chair"
            src="assets/chair.glb">
           </a-asset-item>  
+          <a-asset-item id="soldier" src="assets/Soldier.glb"></a-asset-item>
+          <a-asset-item id="helmet" src="assets/DamagedHelmet.glb"></a-asset-item>
+          <a-asset-item id="water-bottle" src="assets/WaterBottle.glb"></a-asset-item>
+          <a-asset-item id="radio" src="assets/BoomBox.glb"></a-asset-item>
+          <a-asset-item id="lantern" src="assets/Lantern.glb"></a-asset-item>
             </a-assets>
              
           
@@ -243,6 +248,14 @@ scale="0.15 0.15 0.15">
   <a-plane position="0 0.007 0" rotation="-90 0 0" width="0.23" height="0.15" material="shader: flat; color: #1e5fa8"></a-plane>
   <a-text value="TRAINING\nPLAN" position="0 0.008 0" rotation="-90 0 0" align="center" color="#ffffff" width="0.6"></a-text>
 </a-entity>
+<!-- Soldier standing guard outside the door -->
+<a-entity gltf-model="#soldier" position="1.5 0 -4.6" rotation="0 180 0"></a-entity>
+<!-- Lantern post beside the door -->
+<a-entity gltf-model="#lantern" position="-1.6 0 -5.4" scale="0.06 0.06 0.06"></a-entity>
+<!-- Gear on the tablet table -->
+<a-entity gltf-model="#helmet" position="2.5 1.085 -12.28" scale="0.15 0.15 0.15"></a-entity>
+<a-entity gltf-model="#water-bottle" position="2 1.08 -11.7"></a-entity>
+<a-entity gltf-model="#radio" position="3.05 1.145 -12.25" scale="20 20 20"></a-entity>
 </a-scene>
 </body>
                     </html>
