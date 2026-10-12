@@ -14,26 +14,15 @@
                 <img id="grass-ambient-occlusion" src="assets/Grass_001_OCC.jpg">
                 <img id="sky" src="assets/Sky.jpg">
                 <img id="brick" src="assets/Brick_COLOR.jpg">
+                <img id="shingles" src="assets/Shingles_COLOR.jpg">
+                <img id="bark" src="assets/Bark_COLOR.jpg">
+                <img id="pine-needles" src="assets/PineNeedles_COLOR.jpg">
+                <img id="leaves" src="assets/Leaves_COLOR.jpg">
                 <a-asset-item
            id="chair"
            src="assets/chair.glb">
           </a-asset-item>  
-          <a-asset-item
-            id="lamp"
-            src="assets/lamp.glb">
-          </a-asset-item>
             </a-assets>
-            <a-entity
-            gltf-model="#lamp"
-            position=" 2 0 -8"
-            scale="0.25 0.25 0.25">
-          </a-entity>
-             <a-entity
-            gltf-model="#chair"
-            position="0 0 -8"
-            rotation="0 45 0"
-            scale="0.15 0.15 0.15">
-          </a-entity>
              
           
           <a-plane
@@ -111,7 +100,7 @@ depth="10"
 height="0.1">
 </a-box>
 <a-box
-color="darkgray"
+material="src: #shingles; repeat: 4 4"
 position="0 3 -11"
 width="12"
 depth="12"
@@ -119,7 +108,7 @@ height="0.25">
 </a-box>
 <a-mixin
 id="treetrunk"
-color="saddlebrown"
+material="src: #bark; repeat: 1 2"
 geometry="radius:0.2; height:3">
 '</a-mixin>
 <a-cylinder
@@ -140,7 +129,7 @@ position="4 1 -2">
 </a-cylinder>
 <a-mixin
 id="conicaltreeleaves"
-color="green"
+material="src: #pine-needles; repeat: 3 2"
 geometry="radius-bottom:1; height:3">
 </a-mixin>
 <a-cone
@@ -153,7 +142,7 @@ position="4 2.25 -2">
 </a-cone>
 <a-mixin
 id="conicaltreeleaves"
-color="green"
+material="src: #pine-needles; repeat: 3 2"
 geometry="radius-bottom:1; height:3">
 </a-mixin>
 <a-cone
@@ -166,7 +155,7 @@ position="4 2.25 -2">
 </a-cone>
 <a-mixin
 id="sphericaltreeleaves"
-color="green"
+material="src: #leaves; repeat: 3 2"
 geometry="radius:1">
 </a-mixin>
 <a-sphere
