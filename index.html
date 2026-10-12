@@ -13,13 +13,14 @@
                 <img id="grass-normal" src="assets/Grass_001_NORM.jpg">
                 <img id="grass-ambient-occlusion" src="assets/Grass_001_OCC.jpg">
                 <img id="sky" src="assets/Sky.jpg">
+                <img id="brick" src="assets/Brick_COLOR.jpg">
                 <a-asset-item
            id="chair"
-           src="assets\chair.glb">
+           src="assets/chair.glb">
           </a-asset-item>  
           <a-asset-item
             id="lamp"
-            src="assets\lamp.glb">
+            src="assets/lamp.glb">
           </a-asset-item>
             </a-assets>
             <a-entity
@@ -48,11 +49,11 @@
               src="#sky">
             </a-sky>
                   <a-mixin
-                        id="wallcolor"
-                        color="lightsteelblue">
+                        id="brickwall"
+                        material="src: #brick; repeat: 3 1">
                   </a-mixin>
                       <a-box
-                      mixin="wallcolor"
+                      mixin="brickwall"
                       position="0 1.5 -16"
                       rotation="0 0 0"
                       width="10"
@@ -60,7 +61,7 @@
                       depth="0.1">
                     </a-box>
                <a-box
-               mixin="wallcolor"
+               mixin="brickwall"
                position="-5 1.5 -11"
                rotation="0 90 0"
                width="10"
@@ -68,7 +69,7 @@
                depth="0.1">
             </a-box>
             <a-box
-            mixin="wallcolor"
+            mixin="brickwall"
             position="5 1.5 -11"
             rotation="0 90 0"
             width="10"
@@ -76,7 +77,8 @@
             depth="0.1">
         </a-box>
        <a-box
-       mixin="wallcolor"
+       mixin="brickwall"
+       material="repeat: 1.3 1"
        position="-2.875 1.5 -6"
        rotation="0 0 0"
        width="4.25"
@@ -84,7 +86,8 @@
        depth="0.1">
     </a-box>
   <a-box
-  mixin="wallcolor"
+  mixin="brickwall"
+  material="repeat: 1.3 1"
   position="2.875 1.5 -6"
   rotation="0 0 0"
   width="4.25"
@@ -92,7 +95,8 @@
   depth="0.1">
 </a-box>
 <a-box
-mixin="wallcolor"
+mixin="brickwall"
+material="repeat: 0.45 0.17"
 position="0 2.75 -6"
 rotation="0 0 0"
 width="1.5"
@@ -173,6 +177,83 @@ position="-3 2 -1">
 mixin="sphericaltreeleaves"
 position="8 2 -6">
 </a-sphere>
+<!-- Training area sign above the front door -->
+<a-box color="#3b4a2f" position="0 2.68 -5.9" width="3" height="0.36" depth="0.05"></a-box>
+<a-text value="TRAINING AREA" position="0 2.68 -5.87" align="center" color="#ffffff" width="5"></a-text>
+<a-mixin
+id="tabletop"
+color="#5c4033"
+geometry="height:0.05">
+</a-mixin>
+<a-mixin
+id="tableleg"
+color="#3e2b22"
+geometry="radius:0.04; height:0.85">
+</a-mixin>
+<a-mixin
+id="gunmetal"
+color="#2f3330">
+</a-mixin>
+<a-mixin
+id="gunstock"
+color="#4b5320">
+</a-mixin>
+<!-- Weapons table -->
+<a-box mixin="tabletop" position="-2 0.925 -12" width="2" depth="1"></a-box>
+<a-cylinder mixin="tableleg" position="-2.92 0.475 -12.42"></a-cylinder>
+<a-cylinder mixin="tableleg" position="-2.92 0.475 -11.58"></a-cylinder>
+<a-cylinder mixin="tableleg" position="-1.08 0.475 -12.42"></a-cylinder>
+<a-cylinder mixin="tableleg" position="-1.08 0.475 -11.58"></a-cylinder>
+<a-entity class="rifle" position="-2.3 0.985 -12.2" rotation="90 10 0">
+  <a-box mixin="gunmetal" position="0 0 0" width="0.5" height="0.12" depth="0.06"></a-box>
+  <a-box mixin="gunstock" position="-0.38 -0.02 0" width="0.3" height="0.14" depth="0.05"></a-box>
+  <a-box mixin="gunmetal" position="0.35 0 0" width="0.25" height="0.08" depth="0.07"></a-box>
+  <a-cylinder mixin="gunmetal" position="0.58 0.01 0" rotation="0 0 90" radius="0.015" height="0.3"></a-cylinder>
+  <a-box mixin="gunmetal" position="0.08 -0.14 0" rotation="0 0 -10" width="0.07" height="0.18" depth="0.04"></a-box>
+  <a-box mixin="gunstock" position="-0.13 -0.1 0" rotation="0 0 15" width="0.05" height="0.12" depth="0.04"></a-box>
+  <a-cylinder mixin="gunmetal" position="0 0.1 0" rotation="0 0 90" radius="0.025" height="0.22"></a-cylinder>
+</a-entity>
+<a-entity class="rifle" position="-1.9 0.985 -11.75" rotation="90 -8 0">
+  <a-box mixin="gunmetal" position="0 0 0" width="0.5" height="0.12" depth="0.06"></a-box>
+  <a-box mixin="gunstock" position="-0.38 -0.02 0" width="0.3" height="0.14" depth="0.05"></a-box>
+  <a-box mixin="gunmetal" position="0.35 0 0" width="0.25" height="0.08" depth="0.07"></a-box>
+  <a-cylinder mixin="gunmetal" position="0.58 0.01 0" rotation="0 0 90" radius="0.015" height="0.3"></a-cylinder>
+  <a-box mixin="gunmetal" position="0.08 -0.14 0" rotation="0 0 -10" width="0.07" height="0.18" depth="0.04"></a-box>
+  <a-box mixin="gunstock" position="-0.13 -0.1 0" rotation="0 0 15" width="0.05" height="0.12" depth="0.04"></a-box>
+  <a-cylinder mixin="gunmetal" position="0 0.1 0" rotation="0 0 90" radius="0.025" height="0.22"></a-cylinder>
+</a-entity>
+<a-entity class="pistol" position="-1.4 0.965 -12.25" rotation="90 30 0">
+  <a-box mixin="gunmetal" position="0 0 0" width="0.2" height="0.05" depth="0.03"></a-box>
+  <a-box mixin="gunmetal" position="-0.06 -0.06 0" rotation="0 0 -12" width="0.05" height="0.11" depth="0.03"></a-box>
+</a-entity>
+<a-entity
+gltf-model="#chair"
+position="-2 0 -13.25"
+rotation="0 -90 0"
+scale="0.15 0.15 0.15">
+</a-entity>
+<a-entity
+gltf-model="#chair"
+position="-2 0 -10.75"
+rotation="0 90 0"
+scale="0.15 0.15 0.15">
+</a-entity>
+<!-- Tablet table -->
+<a-box mixin="tabletop" position="2.5 0.925 -12" width="1.6" depth="0.9"></a-box>
+<a-cylinder mixin="tableleg" position="1.78 0.475 -12.37"></a-cylinder>
+<a-cylinder mixin="tableleg" position="1.78 0.475 -11.63"></a-cylinder>
+<a-cylinder mixin="tableleg" position="3.22 0.475 -12.37"></a-cylinder>
+<a-cylinder mixin="tableleg" position="3.22 0.475 -11.63"></a-cylinder>
+<a-entity class="tablet" position="2.15 0.956 -12" rotation="0 10 0">
+  <a-box color="#111111" width="0.26" height="0.012" depth="0.18"></a-box>
+  <a-plane position="0 0.007 0" rotation="-90 0 0" width="0.23" height="0.15" material="shader: flat; color: #1e5fa8"></a-plane>
+  <a-text value="TRAINING\nPLAN" position="0 0.008 0" rotation="-90 0 0" align="center" color="#ffffff" width="0.6"></a-text>
+</a-entity>
+<a-entity class="tablet" position="2.85 0.956 -12" rotation="0 -10 0">
+  <a-box color="#111111" width="0.26" height="0.012" depth="0.18"></a-box>
+  <a-plane position="0 0.007 0" rotation="-90 0 0" width="0.23" height="0.15" material="shader: flat; color: #1e5fa8"></a-plane>
+  <a-text value="TRAINING\nPLAN" position="0 0.008 0" rotation="-90 0 0" align="center" color="#ffffff" width="0.6"></a-text>
+</a-entity>
 </a-scene>
 </body>
                     </html>
